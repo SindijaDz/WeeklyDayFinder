@@ -41,21 +41,18 @@ class ViewController: UIViewController, UITextFieldDelegate {
         guard let date = calendar.date(from: dateComponent) else {
             print("calendar.date error")
             return
-            
+          
         }
         let dateFormatter = DateFormatter()
         dateFormatter.locale = Locale(identifier: "en_EN")
         dateFormatter.dateFormat = "EEEE"
         
         let weekday = dateFormatter.string(from: date)
-        let capitalizedWeekDay = weekday.capitalized
-    
-        resultLabel.text = weekday
-    }
+        
+        resultLabel.text = weekday.capitalized
 
+    }
     @IBAction func findWeekDayTapped(_ sender: Any) {
         handleCalculation()
     }
 }
-
-
